@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 53333
 
-CMD ['python', 'server_echo.py']
+CMD ['python3', 'server_echo.py']
