@@ -8,7 +8,7 @@ on:
 
 jobs:
   prepare_environment:
-    runs_on: self-hosted
+    runs-on: self-hosted
     steps:
       - name: stop and remove containers, networks
         run: docker-compose down
