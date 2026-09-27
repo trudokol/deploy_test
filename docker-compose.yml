@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "53333:53333"
+    container-name: server_test_app
+    volumes:
+      - .:/app
