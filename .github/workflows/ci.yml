@@ -1,0 +1,25 @@
+name: CI for test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  prepare_environment:
+    ruls_on: self-hosted
+    steps:
+      - name: stop and remove containers, networks
+        run: docker-compose down
+      - name: remove unused data
+        run: docker system prune -a -f
+  
+  deploy:
+    runs-on: self-hosted
+    needs: prepare_environment
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: docker-compose
+        uses: docker-compose up -d
