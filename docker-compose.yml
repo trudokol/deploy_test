@@ -7,6 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "53333:53333"
-    container_name: server_test_app
+    container_name: server_test:latest
     volumes:
       - .:/app
