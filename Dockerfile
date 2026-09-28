@@ -17,6 +17,4 @@ COPY --from=builder /usr/local/lib/python3.14/site-packages/ /usr/local/lib/pyth
 
 COPY . .
 
-EXPOSE 53333
-
 CMD ["python3", "server_echo.py"]
