@@ -13,7 +13,7 @@ FROM python:3.14-alpine
 
 WORKDIR /app
 
-COPY --from=builder /usr/local/lib/python3.14/site-packages/ /usr/local/lib/python3.14/site-packages/
+COPY --from=builder /usr/local/lib/python3.14/dist-packages/ /usr/local/lib/python3.14/dist-packages/
 
 COPY . .
 
