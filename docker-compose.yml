@@ -8,5 +8,5 @@ services:
     container_name: server_test
     volumes:
       #- .:/app
-      - ./data:/app/data
-      - ./logs:/app/logs
+      - data:/app/data
+      - logs:/app/logs
