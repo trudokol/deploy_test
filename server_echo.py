@@ -38,11 +38,12 @@ def save_data(data):
 
 
 async def main():
-    logging.basicConfig(level=logging.INFO, filename="py.log",
-                        format="%(asctime)s %(levelname)s %(message)s")
-
-
     os.mkdir("data")
+    os.mkdir("logs")
+
+    logging.basicConfig(level=logging.INFO, filename="logs/py.log",
+                        format="%(asctime)s %(levelname)s %(message)s")
+    
     save_data("Jopa")
 
 

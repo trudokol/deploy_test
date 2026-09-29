@@ -7,4 +7,6 @@ services:
       - "53333:53333"
     container_name: server_test
     volumes:
-      - .:/app
+      #- .:/app
+      - ./data:/app/data
+      - ./logs:/app/logs
