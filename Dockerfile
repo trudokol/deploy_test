@@ -34,7 +34,7 @@ FROM python:3.14-alpine
 
 WORKDIR /app
 
-COPY --from=builder /usr/local/lib/python3.14/ /usr/local/lib/python3.14/
+COPY --from=builder /usr/local/lib/python3.14/site-packages/ /usr/local/lib/python3.14/site-packages/
 
 COPY . .
 
