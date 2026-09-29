@@ -39,3 +39,4 @@ COPY --from=builder /usr/local/lib/python3.14/site-packages/ /usr/local/lib/pyth
 COPY . .
 
 CMD ["python3", "server_echo.py"]
+
