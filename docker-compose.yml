@@ -6,11 +6,11 @@ services:
     ports:
       - "53333:53333"
     container_name: server_test
-    volumes:
+    #volumes:
       #- .:/app
-      - data:/app/data
-      - logs:/app/logs
+      #- data:/app/data
+      #- logs:/app/logs
 
 volumes:
-  data:
-  logs:
+  - "./data:/app/data"
+  - "./logs:/app/logs"
