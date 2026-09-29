@@ -38,8 +38,8 @@ def save_data(data):
 
 
 async def main():
-    os.mkdir("data")
-    os.mkdir("logs")
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("logs", exist_ok=True)
 
     logging.basicConfig(level=logging.INFO, filename="logs/py.log",
                         format="%(asctime)s %(levelname)s %(message)s")
