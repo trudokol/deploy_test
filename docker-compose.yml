@@ -10,3 +10,7 @@ services:
       #- .:/app
       - data:/app/data
       - logs:/app/logs
+
+volumes:
+  data:
+  logs:
