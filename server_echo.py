@@ -1,4 +1,5 @@
 import asyncio
+import aiogram
 
 HOST_IP = ""
 PORT = 53333
