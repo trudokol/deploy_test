@@ -1,19 +1,31 @@
-FROM python:3.14-slim AS builder
+# FROM python:3.14-slim AS builder
 
-ENV MALLOC_ARENA_MAX=2
+# ENV MALLOC_ARENA_MAX=2
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY requirements.txt .
+# COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+# RUN pip install --no-cache-dir --progress-bar off -r requirements.txt
 
+
+# FROM python:3.14-alpine
+
+# WORKDIR /app
+
+# COPY --from=builder /usr/local/lib/python3.14/dist-packages/ /usr/local/lib/python3.14/dist-packages/
+
+# COPY . .
+
+# CMD ["python3", "server_echo.py"]
 
 FROM python:3.14-alpine
 
 WORKDIR /app
 
-COPY --from=builder /usr/local/lib/python3.14/dist-packages/ /usr/local/lib/python3.14/dist-packages/
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
