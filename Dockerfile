@@ -30,7 +30,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --progress-bar off -r requirements.txt
 
 
-FROM python:3.14-alpine
+FROM python:3.14-slim
 
 WORKDIR /app
 
