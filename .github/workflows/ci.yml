@@ -7,14 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  prepare_environment:
-    runs-on: self-hosted
-    steps:
-      - name: stop and remove containers, networks
-        run: docker-compose down
-      - name: remove unused data
-        #run: docker system prune -a -f
-        run: docker container prune -f
+  # prepare_environment:
+  #   runs-on: self-hosted
+  #   steps:
+  #     - name: stop and remove containers, networks
+  #       run: docker-compose down
+  #     - name: remove unused data
+  #       #run: docker system prune -a -f
+  #       run: docker container prune -f
   
   deploy:
     runs-on: self-hosted
@@ -22,5 +22,12 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
+
+      - name: stop and remove containers, networks
+        run: docker-compose down
+
       - name: docker-compose
-        run: docker-compose -f docker-compose.yml up -d
+        run: docker-compose -f docker-compose.yml up -d --build
+
+      - name: remove unused data
+        run: docker container prune -f
