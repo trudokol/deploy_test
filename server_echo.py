@@ -19,7 +19,7 @@ async def handle_connection(reader, writer):
 
             logging.debug(data.decode())
 
-            new_text = data.decode().upper() + "ADDITIONAL_TEXT1234"
+            new_text = data.decode().upper() + "ADDITIONAL_TEXT1235"
             new_text = new_text.encode()
             writer.write(new_text)
             await writer.drain()
